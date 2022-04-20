@@ -10,6 +10,10 @@ export default defineConfig({
       component: '@/pages/login',
     },
     {
+      path: './signup',
+      component: '@/pages/signup',
+    },
+    {
       path: '/',
       component: '@/layouts/index.tsx',
       routes: [

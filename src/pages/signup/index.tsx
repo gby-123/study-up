@@ -2,7 +2,7 @@ import './index.less';
 import { Form, Input, Button, Checkbox } from 'antd';
 import { Link } from 'umi';
 
-export default function Login() {
+export default function Signup() {
   const onFinish = (values: any) => {
     console.log('Success:', values);
   };
@@ -11,9 +11,9 @@ export default function Login() {
     console.log('Failed:', errorInfo);
   };
   return (
-    <div className="loginWrap">
-      <div className="loginBox">
-        <div className="title">Login</div>
+    <div className="signupWrap">
+      <div className="signupBox">
+        <div className="title">Signup</div>
         <div className="content">
           <Form
             name="basic"
@@ -31,6 +31,7 @@ export default function Login() {
             >
               <Input />
             </Form.Item>
+
             <Form.Item
               label="Password"
               name="password"
@@ -38,14 +39,35 @@ export default function Login() {
             >
               <Input.Password />
             </Form.Item>
+            <Form.Item
+              label="邀请码"
+              name="invitationCode"
+              rules={[{ required: true, message: '请输入邀请码!' }]}
+            >
+              <Input />
+            </Form.Item>
+            <Form.Item
+              label="PIN码"
+              name="pinCode"
+              rules={[{ required: true, message: '请输入PIN码!' }]}
+            >
+              <Input />
+            </Form.Item>
+            {/* <Form.Item
+              name="remember"
+              valuePropName="checked"
+              wrapperCol={{ offset: 8, span: 16 }}
+            >
+              <Checkbox>Remember me</Checkbox>
+            </Form.Item> */}
 
             <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
               <Button type="primary" htmlType="submit">
-                登录
+                注册
               </Button>
-              <Link to="/signup">
+              <Link to="/login">
                 <Button type="primary" htmlType="submit" className="toBtn">
-                  去注册
+                  去登陆
                 </Button>
               </Link>
             </Form.Item>
